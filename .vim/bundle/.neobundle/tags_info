@@ -1,4 +1,14 @@
 VimClojure
 hybrid.vim
+syntastic
+unite-outline
+unite.vim
+vim-colors-solarized
+vim-easymotion
+vim-javascript
+vim-json
 vim-powerline
+vim-quickrun
+vim-surround
+vimproc
 zencoding-vim
