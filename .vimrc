@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible
 filetype off
 if has('vim_starting')
@@ -8,6 +9,7 @@ call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundle "https://github.com/vim-scripts/hybrid.vim.git"
 NeoBundle "https://github.com/mattn/zencoding-vim.git"
 NeoBundle "VimClojure"
+NeoBundle "https://github.com/Lokaltog/vim-powerline.git"
 filetype plugin indent on
 
 
@@ -19,7 +21,6 @@ set tabstop=2
 set shiftwidth=2
 set scrolloff=20
 let mapleader=','
-colorscheme hybrid
 
 noremap j gj
 noremap k gk
@@ -28,6 +29,8 @@ noremap gk k
 noremap <Down> gj
 noremap <Up> gk
 noremap <Leader>ev :tabnew $HOME/.vimrc<CR>
+noremap <Leader>eg :tabnew $HOME/.gvimrc<CR>
 noremap <Leader>rv :source $HOME/.vimrc<CR>
+noremap <Leader>rg :tabnew $HOME/.gvimrc<CR>
 vnoremap > >gv
 vnoremap < <gv
