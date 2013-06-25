@@ -12,6 +12,7 @@ NeoBundle "VimClojure"
 NeoBundle "https://github.com/Lokaltog/vim-powerline.git"
 NeoBundle "https://github.com/tpope/vim-surround.git"
 NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
+" EasyMotion <Leader><Leader>w で発動
 NeoBundle "https://github.com/Lokaltog/vim-easymotion.git"
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
@@ -25,11 +26,13 @@ filetype plugin indent on
 
 set number
 set cursorline
-set list
-set listchars=tab:▸\ 
-set tabstop=2
-set shiftwidth=2
+"set list
+"set listchars=tab:▸\ 
+set shiftwidth=4
+set tabstop=4
+set smartindent
 set scrolloff=20
+set nobackup
 let mapleader=','
 
 noremap j gj
