@@ -7,6 +7,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 " ここでプラグインをインストール
 NeoBundle "https://github.com/vim-scripts/hybrid.vim.git"
+" Zencoding Ctrl-y , で発動
 NeoBundle "https://github.com/mattn/zencoding-vim.git"
 NeoBundle "VimClojure"
 NeoBundle "https://github.com/Lokaltog/vim-powerline.git"
@@ -15,7 +16,14 @@ NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
 " EasyMotion <Leader><Leader>w で発動
 NeoBundle "https://github.com/Lokaltog/vim-easymotion.git"
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 NeoBundle "https://github.com/h1mesuke/unite-outline.git"
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
@@ -30,10 +38,12 @@ set cursorline
 "set listchars=tab:▸\ 
 set shiftwidth=4
 set tabstop=4
+set expandtab
 set smartindent
 set scrolloff=20
 set nobackup
 let mapleader=','
+let g:quickun_config={'_' : {'runner' : 'vimproc'}}
 
 noremap j gj
 noremap k gk
@@ -49,3 +59,9 @@ vnoremap > >gv
 vnoremap < <gv
 nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
+imap {} {}<Left>
+imap [] []<Left>
+imap '' ''<Left>
+imap "" ""<Left>
+imap () ()<Left>
+imap <> <><Left>
