@@ -15,7 +15,14 @@ NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
 " EasyMotion <Leader><Leader>w で発動
 NeoBundle "https://github.com/Lokaltog/vim-easymotion.git"
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+	\ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+\ }
 NeoBundle "https://github.com/h1mesuke/unite-outline.git"
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
@@ -49,3 +56,7 @@ vnoremap > >gv
 vnoremap < <gv
 nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
+
+"RSpec対応
+let g:quickrun_config = {}
+let g:quickrun_config._ = {'runner' : 'vimproc'}
