@@ -29,6 +29,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
 NeoBundle "https://github.com/helino/vim-json.git"
 NeoBundle "https://github.com/scrooloose/syntastic.git"
+NeoBundle "https://github.com/cocopon/iceberg.vim.git"
 filetype plugin indent on
 
 
@@ -54,14 +55,8 @@ noremap <Up> gk
 noremap <Leader>ev :tabnew $HOME/.vimrc<CR>
 noremap <Leader>eg :tabnew $HOME/.gvimrc<CR>
 noremap <Leader>rv :source $HOME/.vimrc<CR>
-noremap <Leader>rg :tabnew $HOME/.gvimrc<CR>
+noremap <Leader>rg :source $HOME/.gvimrc<CR>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
-imap {} {}<Left>
-imap [] []<Left>
-imap '' ''<Left>
-imap "" ""<Left>
-imap () ()<Left>
-imap <> <><Left>

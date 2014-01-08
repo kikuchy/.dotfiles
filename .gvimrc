@@ -1,4 +1,5 @@
-colorscheme hybrid
+"colorscheme hybrid
+colorscheme iceberg
 
 set imdisable
 
