@@ -51,12 +51,16 @@ noremap <Up> gk
 noremap <Leader>ev :tabnew $HOME/.vimrc<CR>
 noremap <Leader>eg :tabnew $HOME/.gvimrc<CR>
 noremap <Leader>rv :source $HOME/.vimrc<CR>
-noremap <Leader>rg :tabnew $HOME/.gvimrc<CR>
+noremap <Leader>rg :source $HOME/.gvimrc<CR>
 vnoremap > >gv
 vnoremap < <gv
+nnoremap <silent> <Leader>q :<C-u>QuickRun<CR>
 nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
 
 "RSpec対応
 let g:quickrun_config = {}
-let g:quickrun_config._ = {'runner' : 'vimproc'}
+let g:quickrun_config._ = {
+	\ 'runner' : 'vimproc',
+	\ 'runnervimproc/updatetime' : 100
+\}
