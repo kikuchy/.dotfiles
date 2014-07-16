@@ -8,7 +8,9 @@ call neobundle#rc(expand('~/.vim/bundle'))
 
 " Plugins and its settings
 NeoBundle "https://github.com/vim-scripts/hybrid.vim.git"
-NeoBundle "https://github.com/mattn/zencoding-vim.git"
+" zen-codingの後継。insert modeのとき <C-y>, で発動
+" <C-y>nで未入力箇所を移動
+NeoBundle "mattn/emmet-vim"
 NeoBundle "VimClojure"
 NeoBundle "https://github.com/tpope/vim-surround.git"
 NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
@@ -65,6 +67,7 @@ set expandtab
 set smartindent
 set scrolloff=20
 set nobackup
+filetype plugin on
 let mapleader=','
 
 noremap j gj
