@@ -87,6 +87,7 @@ nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
 nnoremap <silent> <Leader>gs :Gstatus<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>ga :Gwrite<CR>
 
 "RSpec対応
 let g:quickrun_config = {}
