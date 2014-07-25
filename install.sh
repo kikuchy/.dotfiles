@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# special thanks for @kaorimatz
+
 set -e
 set -u
 
