@@ -54,6 +54,10 @@ NeoBundle 'jdonaldson/vaxe'
 NeoBundle 'Shougo/neocomplete.vim'
 " ステータスライン拡張
 NeoBundle 'itchyny/lightline.vim'
+" CoffeeScript用
+NeoBundle 'kchmck/vim-coffee-script'
+" Scala用
+NeoBundle 'derekwyatt/vim-scala'
 
 
 set number
