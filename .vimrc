@@ -54,6 +54,8 @@ NeoBundle 'jdonaldson/vaxe'
 NeoBundle 'Shougo/neocomplete.vim'
 " ステータスライン拡張
 NeoBundle 'itchyny/lightline.vim'
+" ctagsのファイル生成
+NeoBundle 'soramugi/auto-ctags.vim'
 " CoffeeScript用
 NeoBundle 'kchmck/vim-coffee-script'
 " Scala用
@@ -194,6 +196,11 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" auto-ctagsの設定
+let g:auto_ctags_directory_list = ['.git', '.svn']
+let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
+set tags+=.git/tags
 
 " localのvimrc読み込み
 let s:vimrc_local = "~/.vimrc.local"
