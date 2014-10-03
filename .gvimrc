@@ -10,4 +10,3 @@ if filereadable(expand(s:gvimrc_local))
 	exec ":source ".s:gvimrc_local
 	nnoremap <Leader>elg :<C-u>tabnew ~/.gvimrc.local<CR>
 endif
-
