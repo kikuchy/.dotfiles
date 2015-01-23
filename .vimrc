@@ -63,6 +63,8 @@ NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " Scala用
 NeoBundle 'derekwyatt/vim-scala'
+" lessシンタックス
+NeoBundle 'groenewege/vim-less'
 
 call neobundle#end()
 filetype plugin indent on
