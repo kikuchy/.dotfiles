@@ -72,8 +72,8 @@ filetype plugin indent on
 
 set number
 set cursorline
-"set list
-"set listchars=tab:▸\ 
+set list
+set listchars=eol:¬,trail:_,tab:▸\
 set shiftwidth=4
 set tabstop=4
 set autoindent
