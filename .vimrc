@@ -65,6 +65,11 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'derekwyatt/vim-scala'
 " lessシンタックス
 NeoBundle 'groenewege/vim-less'
+" Rubyコード補完
+NeoBundle 'marcus/rsense'
+NeoBundle 'supermomonga/neocomplete-rsense.vim'
+" 自動でendを付ける
+NeoBundle 'tpope/vim-endwise'
 
 call neobundle#end()
 filetype plugin indent on
