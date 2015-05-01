@@ -25,7 +25,9 @@ if [ -d "$dotfiles" ]; then
   (cd "$dotfiles" && git pull --ff-only)
 else
   git clone https://github.com/kikuchy/.dotfiles.git "$dotfiles"
+  cd $dotfiles
   git submodule update --init
+  cd $HOME
 fi
 
 if has vim; then
