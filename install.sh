@@ -37,3 +37,10 @@ if has vim; then
 fi
 
 has git && symlink "$dotfiles/.gitignore" "$HOME/.gitignore"
+
+if [ "`uname -s`" = Darwin ]; then
+  has git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  cd $dotfiles
+  brew brewdle
+  cd $HOME
+fi
