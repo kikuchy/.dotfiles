@@ -38,6 +38,8 @@ fi
 
 has git && symlink "$dotfiles/.gitignore" "$HOME/.gitignore"
 
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
 if [ "`uname -s`" = Darwin ]; then
   has git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   cd $dotfiles
