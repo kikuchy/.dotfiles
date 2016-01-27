@@ -38,6 +38,11 @@ fi
 
 has git && symlink "$dotfiles/.gitignore" "$HOME/.gitignore"
 
+if has tmux; then
+  symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+  symlink "$dotfiles/.tmux" "$HOME/.tmux"
+fi
+
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 if [ "`uname -s`" = Darwin ]; then
