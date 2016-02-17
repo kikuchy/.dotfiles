@@ -1,5 +1,6 @@
 set encoding=utf-8
 set nocompatible
+filetype off
 if has('vim_starting')
     set nocompatible
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -47,7 +48,6 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
-filetype plugin indent on
 " Evernoteの編集をできるようにする
 NeoBundle 'kakkyz81/evervim'
 " Haxe用プラグイン
@@ -69,7 +69,6 @@ NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
 " 自動でendを付ける
 NeoBundle 'tpope/vim-endwise'
-
 " PureScriptサポート
 NeoBundle "raichoo/purescript-vim"
 NeoBundle "frigoeu/psc-ide-vim"
