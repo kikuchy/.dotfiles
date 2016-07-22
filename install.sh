@@ -49,5 +49,7 @@ if [ "`uname -s`" = Darwin ]; then
   has git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   cd $dotfiles
   brew brewdle
+  mkdir -r $HOME/Library/Application\ Support/Karabiner
+  ln -s $dotfiles/private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
   cd $HOME
 fi

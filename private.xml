@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<root>
+    <devicevendordef>
+       <vendorname>FILCO</vendorname>
+       <vendorid>0x04d9</vendorid>
+   </devicevendordef>
+   <deviceproductdef>
+       <productname>Majestouch_FKBN91M/NFB2</productname>
+       <productid>0x1818</productid>
+   </deviceproductdef>
+    <devicevendordef>
+       <vendorname>ATEN</vendorname>
+       <vendorid>0x05ac</vendorid>
+   </devicevendordef>
+   <deviceproductdef>
+       <productname>CS533_QWERT_mapping</productname>
+       <productid>0x0257</productid>
+   </deviceproductdef>
+    <devicevendordef>
+        <vendorname>Microsoft</vendorname>
+        <vendorid>0x45e</vendorid>
+   </devicevendordef>
+   <deviceproductdef>
+       <productname>Sculpt_Ergonomic_Keyboard</productname>
+       <productid>0x07a6</productid>
+   </deviceproductdef>
+    <devicevendordef>
+        <vendorname>ErgoDox_EZ</vendorname>
+        <vendorid>0xfeed</vendorid>
+   </devicevendordef>
+   <deviceproductdef>
+       <productname>ErgoDox_EZ</productname>
+       <productid>0x1307</productid>
+   </deviceproductdef>   
+   <item>
+       <name>Chande f19 key to Control key</name>
+       <appendix>(Change f19 key to caps lock key on internal keyboard.)</appendix>
+       <identifier>private.f19_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::FILCO,
+               DeviceProduct::Majestouch_FKBN91M/NFB2
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_L</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::ATEN,
+               DeviceProduct::CS533_QWERT_mapping
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_L</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+       </block>
+    </item>
+    <item>
+       <name>Chande OPTION_L key to Command key</name>
+       <appendix>(For PC keyboards.)</appendix>
+       <identifier>private.option_l_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::FILCO,
+               DeviceProduct::Majestouch_FKBN91M/NFB2
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::ATEN,
+               DeviceProduct::CS533_QWERT_mapping
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::OPTION_L</autogen>
+       </block>
+    </item>
+    <item>
+       <name>Chande OPTION_R key to Command key</name>
+       <appendix>(For PC keyboards.)</appendix>
+       <identifier>private.option_r_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::FILCO,
+               DeviceProduct::Majestouch_FKBN91M/NFB2
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::ATEN,
+               DeviceProduct::CS533_QWERT_mapping
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::OPTION_R</autogen>
+       </block>
+   </item>
+   <item>
+       <name>Chande Windows key to option key</name>
+       <appendix>(For PC keyboards.)</appendix>
+       <identifier>private.windows_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::FILCO,
+               DeviceProduct::Majestouch_FKBN91M/NFB2
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::ATEN,
+               DeviceProduct::CS533_QWERT_mapping
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::COMMAND_L</autogen>
+       </block>
+   </item>
+    <item>
+        <name>Change KANA/EISUU key to Esc key</name>
+       <appendix>(For PC keyboards.)</appendix>
+       <identifier>private.kanaeisuu_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::FILCO,
+               DeviceProduct::Majestouch_FKBN91M/NFB2
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::ATEN,
+               DeviceProduct::CS533_QWERT_mapping
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+       </block>
+       <block>
+           <device_only>
+               DeviceVendor::Microsoft,
+               DeviceProduct::Sculpt_Ergonomic_Keyboard
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::BACKQUOTE</autogen>
+       </block>
+   </item>
+   <item>
+       <name>Chande Home key to EISUU</name>
+       <appendix>(for ErgoDox.)</appendix>
+       <identifier>private.home_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::ErgoDox_EZ,
+               DeviceProduct::ErgoDox_EZ
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::HOME, KeyCode::JIS_EISUU</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::HOME, KeyCode::HOME</autogen>
+       </block>
+    </item>
+   <item>
+       <name>Chande End key to KANA</name>
+       <appendix>(for ErgoDox.)</appendix>
+       <identifier>private.end_hack</identifier>
+       <block>
+           <device_only>
+               DeviceVendor::ErgoDox_EZ,
+               DeviceProduct::ErgoDox_EZ
+           </device_only>
+           <autogen>__KeyToKey__ KeyCode::END, KeyCode::JIS_KANA</autogen>
+       </block>
+       <block>
+           <autogen>__KeyToKey__ KeyCode::END, KeyCode::END</autogen>
+       </block>
+    </item>
+</root>
