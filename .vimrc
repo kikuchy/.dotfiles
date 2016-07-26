@@ -33,7 +33,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle "https://github.com/pangloss/vim-javascript.git"
 NeoBundle "https://github.com/helino/vim-json.git"
 NeoBundle "https://github.com/scrooloose/syntastic.git"
-NeoBundle 'itchyny/calendar.vim'
 " .gitとかがあるプロジェクトルートにcdしてくれる <Leader>cdで発動
 NeoBundle 'https://github.com/airblade/vim-rooter.git'
 " ファイルのツリー表示
@@ -50,8 +49,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 " Evernoteの編集をできるようにする
 NeoBundle 'kakkyz81/evervim'
-" Haxe用プラグイン
-NeoBundle 'jdonaldson/vaxe'
 " オムニ補完
 NeoBundle 'Shougo/neocomplete.vim'
 " ステータスライン拡張
@@ -60,8 +57,6 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'soramugi/auto-ctags.vim'
 " CoffeeScript用
 NeoBundle 'kchmck/vim-coffee-script'
-" Scala用
-NeoBundle 'derekwyatt/vim-scala'
 " lessシンタックス
 NeoBundle 'groenewege/vim-less'
 " Rubyコード補完
@@ -69,9 +64,6 @@ NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
 " 自動でendを付ける
 NeoBundle 'tpope/vim-endwise'
-" PureScriptサポート
-NeoBundle "raichoo/purescript-vim"
-NeoBundle "frigoeu/psc-ide-vim"
 
 call neobundle#end()
 filetype plugin indent on
