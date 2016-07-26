@@ -64,6 +64,8 @@ NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
 " 自動でendを付ける
 NeoBundle 'tpope/vim-endwise'
+" ReactJS
+NeoBundle 'mxw/vim-jsx'
 
 call neobundle#end()
 filetype plugin indent on
