@@ -3,72 +3,64 @@ set nocompatible
 filetype off
 if has('vim_starting')
     set nocompatible
-	set runtimepath+=~/.vim/bundle/neobundle.vim
+    set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.vim/bundle/'))
 
 " Plugins and its settings
-NeoBundle "https://github.com/vim-scripts/hybrid.vim.git"
+call dein#add("https://github.com/vim-scripts/hybrid.vim.git")
 " zen-codingの後継。insert modeのとき <C-y>, で発動
 " <C-y>nで未入力箇所を移動
-NeoBundle "mattn/emmet-vim"
-NeoBundle "VimClojure"
-NeoBundle "https://github.com/tpope/vim-surround.git"
-NeoBundle "https://github.com/altercation/vim-colors-solarized.git"
+call dein#add("mattn/emmet-vim")
+call dein#add("VimClojure")
+call dein#add("https://github.com/tpope/vim-surround.git")
+call dein#add("https://github.com/altercation/vim-colors-solarized.git")
 " EasyMotion <Leader><Leader>w で発動
-NeoBundle "https://github.com/Lokaltog/vim-easymotion.git"
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-	\ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-\ }
-NeoBundle "https://github.com/h1mesuke/unite-outline.git"
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle "https://github.com/pangloss/vim-javascript.git"
-NeoBundle "https://github.com/helino/vim-json.git"
-NeoBundle "https://github.com/scrooloose/syntastic.git"
+call dein#add("https://github.com/Lokaltog/vim-easymotion.git")
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimproc', {'build': 'make'})
+call dein#add("https://github.com/h1mesuke/unite-outline.git")
+call dein#add('thinca/vim-quickrun')
+call dein#add("https://github.com/pangloss/vim-javascript.git")
+call dein#add("https://github.com/helino/vim-json.git")
+call dein#add("https://github.com/scrooloose/syntastic.git")
 " .gitとかがあるプロジェクトルートにcdしてくれる <Leader>cdで発動
-NeoBundle 'https://github.com/airblade/vim-rooter.git'
+call dein#add('https://github.com/airblade/vim-rooter.git')
 " ファイルのツリー表示
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 " gitプラグイン
-NeoBundle 'tpope/vim-fugitive'
+call dein#add('tpope/vim-fugitive')
 " ステータス行に現在のgitブランチを表示する
 "set statusline+=%{fugitive#statusline()}
 " コメントON/OFFを手軽に実行 行選択してCtrl+-を二回押しで複数行コメントアウト
-NeoBundle 'tomtom/tcomment_vim'
+call dein#add('tomtom/tcomment_vim')
 " インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
+call dein#add('nathanaelkane/vim-indent-guides')
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
 " Evernoteの編集をできるようにする
-NeoBundle 'kakkyz81/evervim'
+call dein#add('kakkyz81/evervim')
 " オムニ補完
-NeoBundle 'Shougo/neocomplete.vim'
+call dein#add('Shougo/neocomplete.vim')
 " ステータスライン拡張
-NeoBundle 'itchyny/lightline.vim'
+call dein#add('itchyny/lightline.vim')
 " ctagsのファイル生成
-NeoBundle 'soramugi/auto-ctags.vim'
+call dein#add('soramugi/auto-ctags.vim')
 " CoffeeScript用
-NeoBundle 'kchmck/vim-coffee-script'
+call dein#add('kchmck/vim-coffee-script')
 " lessシンタックス
-NeoBundle 'groenewege/vim-less'
+call dein#add('groenewege/vim-less')
 " Rubyコード補完
-NeoBundle 'marcus/rsense'
-NeoBundle 'supermomonga/neocomplete-rsense.vim'
+call dein#add('marcus/rsense')
+call dein#add('Shougo/neocomplcache-rsense.vim')
 " 自動でendを付ける
-NeoBundle 'tpope/vim-endwise'
+call dein#add('tpope/vim-endwise')
 " ReactJS
-NeoBundle 'mxw/vim-jsx'
+call dein#add('mxw/vim-jsx')
 
-call neobundle#end()
+call dein#end()
 filetype plugin indent on
+syntax enable
 
 
 set number
