@@ -27,9 +27,9 @@ else
   git clone https://github.com/kikuchy/.dotfiles.git "$dotfiles"
   cd $dotfiles
   git submodule update --init
-  git config --global alias.c=commit -v
-  git config --global alias.o=checkout
-  git config --global alias.s=status
+  git config --global alias.c "commit -v"
+  git config --global alias.o checkout
+  git config --global alias.s status
   cd $HOME
 fi
 
