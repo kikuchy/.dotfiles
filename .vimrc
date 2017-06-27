@@ -12,7 +12,6 @@ call dein#add("https://github.com/vim-scripts/hybrid.vim.git")
 " zen-codingの後継。insert modeのとき <C-y>, で発動
 " <C-y>nで未入力箇所を移動
 call dein#add("mattn/emmet-vim")
-call dein#add("VimClojure")
 call dein#add("https://github.com/tpope/vim-surround.git")
 call dein#add("https://github.com/altercation/vim-colors-solarized.git")
 " EasyMotion <Leader><Leader>w で発動
@@ -26,8 +25,6 @@ call dein#add("https://github.com/helino/vim-json.git")
 call dein#add("https://github.com/scrooloose/syntastic.git")
 " .gitとかがあるプロジェクトルートにcdしてくれる <Leader>cdで発動
 call dein#add('https://github.com/airblade/vim-rooter.git')
-" ファイルのツリー表示
-call dein#add('scrooloose/nerdtree')
 " gitプラグイン
 call dein#add('tpope/vim-fugitive')
 " ステータス行に現在のgitブランチを表示する
@@ -38,8 +35,6 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
-" Evernoteの編集をできるようにする
-call dein#add('kakkyz81/evervim')
 " オムニ補完
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet')
@@ -57,8 +52,6 @@ call dein#add('marcus/rsense')
 call dein#add('Shougo/neocomplcache-rsense.vim')
 " 自動でendを付ける
 call dein#add('tpope/vim-endwise')
-" ReactJS
-call dein#add('mxw/vim-jsx')
 
 call dein#end()
 filetype plugin indent on
