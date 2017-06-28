@@ -1,0 +1,164 @@
+[[plugins]]
+repo = 'vim-scripts/hybrid.vim'
+
+# zen-codingの後継。insert modeのとき <C-y>, で発動
+# <C-y>nで未入力箇所を移動
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = 'html'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+# EasyMotion <Leader><Leader>w で発動
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+
+[[plugins]]
+repo = 'h1mesuke/unite-outline'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hooook_add = '''
+nnoremap <silent> <Leader>q :<C-u>QuickRun<CR>
+let g:quickrun_config = {}
+let g:quickrun_config._ = {
+	\ 'runner' : 'vimproc',
+	\ 'runner/vimproc/updatetime' : 100
+\}
+'''
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+# .gitとかがあるプロジェクトルートにcdしてくれる <Leader>cdで発動
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+# gitプラグイン
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>ga :Gwrite<CR>
+'''
+
+# コメントON/OFFを手軽に実行 行選択してCtrl+-を二回押しで複数行コメントアウト
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# インデントに色を付けて見やすくする
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hooook_add = '''
+    let g:indent_guides_enable_on_vim_startup = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# ステータスライン拡張
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'], ['fugitive', 'filename'] ]
+      \ },
+    \ 'component_function': {
+    \   'readonly': 'LLReadonly',
+    \   'modified': 'LLModified',
+    \   'filename': 'LLFilename',
+    \   'fugitive': 'LLFugitive'
+    \ },
+    \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+    \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+\ }
+function! LLModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LLReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+endfunction
+
+function! LLFilename()
+  return ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LLModified() ? ' ' . LLModified() : '')
+endfunction
+
+function! LLFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+        let _ = fugitive#head()
+        return strlen(_) && winwidth('.') > 100 ? '⭠ '._ : ''
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+'''
+
+# ctagsのファイル生成
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
+
+# CoffeeScript用
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+# lessシンタックス
+[[plugins]]
+repo = 'groenewege/vim-less'
+on_ft = 'less'
+
+# Rubyコード補完
+[[plugins]]
+repo = 'marcus/rsense'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'Shougo/neocomplcache-rsense.vim'
+
+# 自動でendを付ける
+[[plugins]]
+repo = 'tpope/vim-endwise'
+

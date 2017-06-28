@@ -5,55 +5,14 @@ if has('vim_starting')
     set nocompatible
     set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 endif
-call dein#begin(expand('~/.vim/bundle/'))
+if dein#load_state(expand('~/.vim/bundle/'))
+    call dein#begin(expand('~/.vim/bundle/'))
 
-" Plugins and its settings
-call dein#add("https://github.com/vim-scripts/hybrid.vim.git")
-" zen-codingの後継。insert modeのとき <C-y>, で発動
-" <C-y>nで未入力箇所を移動
-call dein#add("mattn/emmet-vim")
-call dein#add("https://github.com/tpope/vim-surround.git")
-call dein#add("https://github.com/altercation/vim-colors-solarized.git")
-" EasyMotion <Leader><Leader>w で発動
-call dein#add("https://github.com/Lokaltog/vim-easymotion.git")
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc', {'build': 'make'})
-call dein#add("https://github.com/h1mesuke/unite-outline.git")
-call dein#add('thinca/vim-quickrun')
-call dein#add("https://github.com/pangloss/vim-javascript.git")
-call dein#add("https://github.com/helino/vim-json.git")
-call dein#add("https://github.com/scrooloose/syntastic.git")
-" .gitとかがあるプロジェクトルートにcdしてくれる <Leader>cdで発動
-call dein#add('https://github.com/airblade/vim-rooter.git')
-" gitプラグイン
-call dein#add('tpope/vim-fugitive')
-" ステータス行に現在のgitブランチを表示する
-"set statusline+=%{fugitive#statusline()}
-" コメントON/OFFを手軽に実行 行選択してCtrl+-を二回押しで複数行コメントアウト
-call dein#add('tomtom/tcomment_vim')
-" インデントに色を付けて見やすくする
-call dein#add('nathanaelkane/vim-indent-guides')
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
-" オムニ補完
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-" ステータスライン拡張
-call dein#add('itchyny/lightline.vim')
-" ctagsのファイル生成
-call dein#add('soramugi/auto-ctags.vim')
-" CoffeeScript用
-call dein#add('kchmck/vim-coffee-script')
-" lessシンタックス
-call dein#add('groenewege/vim-less')
-" Rubyコード補完
-call dein#add('marcus/rsense')
-call dein#add('Shougo/neocomplcache-rsense.vim')
-" 自動でendを付ける
-call dein#add('tpope/vim-endwise')
+    call dein#load_toml(expand('~/.vim/plugins.toml'), {'lazy':0})
 
-call dein#end()
+    call dein#end()
+    call dein#save_state()
+endif
 filetype plugin indent on
 syntax enable
 
@@ -84,64 +43,11 @@ noremap <Leader>rv :source $HOME/.vimrc<CR>
 noremap <Leader>rg :source $HOME/.gvimrc<CR>
 vnoremap > >gv
 vnoremap < <gv
-nnoremap <silent> <Leader>q :<C-u>QuickRun<CR>
 nnoremap [unite] <Nop>
 nmap <Leader>f [unite]
-nnoremap <silent> <Leader>gs :Gstatus<CR>
-nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>ga :Gwrite<CR>
 
-"RSpec対応
-let g:quickrun_config = {}
-let g:quickrun_config._ = {
-	\ 'runner' : 'vimproc',
-	\ 'runner/vimproc/updatetime' : 100
-\}
-
-"Calender.vim 設定
-let g:calendar_views = [ 'year', 'month', 'clock' ]
 
 " lightline.vim 設定
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'], ['fugitive', 'filename'] ]
-      \ },
-    \ 'component_function': {
-    \   'readonly': 'LLReadonly',
-    \   'modified': 'LLModified',
-    \   'filename': 'LLFilename',
-    \   'fugitive': 'LLFugitive'
-    \ },
-    \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-    \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
-\ }
-function! LLModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LLReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
-endfunction
-
-function! LLFilename()
-  return ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LLModified() ? ' ' . LLModified() : '')
-endfunction
-
-function! LLFugitive()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-        let _ = fugitive#head()
-        return strlen(_) && winwidth('.') > 100 ? '⭠ '._ : ''
-    endif
-  catch
-  endtry
-  return ''
-endfunction
 
 " neocomplete.vim 設定
 " Disable AutoComplPop.
