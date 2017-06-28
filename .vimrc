@@ -13,7 +13,7 @@ endif
 if dein#load_state(expand('~/.vim/bundle/'))
     call dein#begin(expand('~/.vim/bundle/'))
 
-    call dein#load_toml(expand('~/.vim/plugins.toml'), {'lazy':0})
+    call dein#load_toml(expand('~/.vim/plugins.toml'))
 
     call dein#end()
     call dein#save_state()
