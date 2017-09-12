@@ -104,6 +104,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+if = 'has("lua")'
 hook_add = '''
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
