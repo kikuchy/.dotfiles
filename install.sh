@@ -53,5 +53,9 @@ if [ "`uname -s`" = Darwin ]; then
   cd $dotfiles
   mkdir -p $HOME/Library/Application\ Support/Karabiner
   ln -s $dotfiles/private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
+  if [ -d "$HOME/.config/karabiner" ]; then
+      mkdir -p $HOME/config/karabiner
+  fi
+  symlink "$dotfiles/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
   cd $HOME
 fi
