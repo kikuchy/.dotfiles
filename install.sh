@@ -57,5 +57,7 @@ if [ "`uname -s`" = Darwin ]; then
       mkdir -p $HOME/config/karabiner
   fi
   symlink "$dotfiles/.config/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+  symlink "$dotfiles/.zshrc.osx" "$HOME/.zshrc.osx"
+  echo "source $HOME/.zshrc.osx" >> $HOME/.zshrc
   cd $HOME
 fi
