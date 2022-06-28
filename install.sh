@@ -33,23 +33,12 @@ else
   cd $HOME
 fi
 
-if has vim; then
-  symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
-  symlink "$dotfiles/.vim" "$HOME/.vim"
-  symlink "$dotfiles/.gvimrc" "$HOME/.gvimrc"
-fi
-
 has git && symlink "$dotfiles/.gitignore" "$HOME/.gitignore"
-
-if has tmux; then
-  symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
-  symlink "$dotfiles/.tmux" "$HOME/.tmux"
-fi
 
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 if [ "`uname -s`" = Darwin ]; then
-  has git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  has git && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   cd $dotfiles
   mkdir -p $HOME/Library/Application\ Support/Karabiner
   ln -s $dotfiles/private.xml $HOME/Library/Application\ Support/Karabiner/private.xml
@@ -60,4 +49,17 @@ if [ "`uname -s`" = Darwin ]; then
   symlink "$dotfiles/.zshrc.osx" "$HOME/.zshrc.osx"
   echo "source $HOME/.zshrc.osx" >> $HOME/.zshrc
   cd $HOME
+fi
+
+if has vim || has nvim; then
+  symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
+  symlink "$dotfiles/.vim" "$HOME/.vim"
+  symlink "$dotfiles/.gvimrc" "$HOME/.gvimrc"
+  mkdir -p "$HOME/.config/nvim"
+  symlink "$dotfiles/.vimrc" "$HOME/.config/nvim/init.vim"
+fi
+
+if has tmux; then
+  symlink "$dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+  symlink "$dotfiles/.tmux" "$HOME/.tmux"
 fi
